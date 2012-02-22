@@ -1,11 +1,11 @@
 === Plugin Name ===
 Contributors: christopherross
 Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest/
-Tags: pinterest
+Tags: pinboard, pinterest, widget
 Donate link:  http://thisismyurl.com/
 Requires at least: 3.0.0
 Tested up to: 3.3.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 
 An easy way to add recent Pinterest posts to your WordPress website as a widget.
 
@@ -16,6 +16,8 @@ This is an early version of the Easy Pinterest widget for WordPress, please let 
 
 The plugin adds a 300px wide Widget to your website which fetches your Pinterest RSS feed and displays the images on your website. Currently, you can select the number of images to display, the account to fetch and the title of the Widget.
 
+Under the Settings > Easy Pinterest page, you can also choose to block Pinterest from indexing your website.
+
 At the moment, it fetches once per day.
 
 == Installation ==
@@ -25,6 +27,8 @@ To install the plugin, please upload the folder to your plugins folder and activ
 == Screenshots ==
 
 1. Screenshot of Widget in action
+2. Control Panel
+2. Widget
 
 == Updates ==
 Updates to the plugin will be posted here, to [Christopher Ross]
@@ -45,4 +49,13 @@ If you would like to donate to help support future development of this tool, ple
 
 == Change Log ==
 
-* 1.0.0 The official release, see more at [thisismyurl.com] (http://thisismyurl.com) 
+* 1.0.0 *
+
+- The official release, see more at [thisismyurl.com] (http://thisismyurl.com) 
+
+* 1.1.0 *
+
+- added new screen shot for control panel
+- added new screen shot for widget
+- added ability to block Pinterest from indexing pages
+- added ability to include thank you credit line under widget
