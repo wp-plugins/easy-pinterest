@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Easy Pintrest
+Plugin Name: Easy Pinterest
 Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest/
-Description: An easy to use WordPress function to add Easy Pintrest to any theme as a function or Widget.
+Description: An easy to use WordPress function to add Easy Pinterest to any theme as a function or Widget.
 Author: Christopher Ross
 Tags: pinterest
 Author URI: http://thisismyurl.com
@@ -81,7 +81,7 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 			
 			echo $before_widget;
 			
-			echo '<h4 class="widgettitle pintrest-title"><a href="http://pinterest.com/' . $instance['pinterest_username'] . '" 
+			echo '<h4 class="widgettitle pinterest-title"><a href="http://pinterest.com/' . $instance['pinterest_username'] . '" 
 				target="_blank">' . $instance['title'].'</h4>';
 				
 			echo '<div class="content"><div class="textwidget">';
@@ -110,7 +110,7 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 function thisismyurl_easy_pinterest_css( ) {
 	echo "<!-- Easy Pinterest by Christopher Ross (http://thisismyurl.com) --><style>
 	
-		h4.pintrest-title {background: url(" . plugins_url( 'images/pinterest-red.png' , __FILE__ ) . ") no-repeat right; padding-top:20px;}
+		h4.pinterest-title {background: url(" . plugins_url( 'images/pinterest-red.png' , __FILE__ ) . ") no-repeat right; padding-top:20px;}
 		ul.easy-pinterest ol {float:left; width: 90px; height: 90px; overflow: hidden; margin-right: 10px; margin: 0px 10px 10px 0px; background: #efefef;display:table-cell; vertical-align:middle;}
 		ul.easy-pinterest ol img {max-width: 100%; height: auto;}
 		ul.easy-pinterest ol p {display: none;}
