@@ -1,17 +1,17 @@
 === Plugin Name ===
 Contributors: christopherross
-Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest/
+Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest-wordpress/
 Tags: pinboard, pinterest, widget
-Donate link:  http://thisismyurl.com/
+Donate link:  http://thisismyurl.com/downloads/wordpress-plugins/
 Requires at least: 3.0.0
 Tested up to: 3.3.1
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 
 An easy way to add recent Pinterest posts to your WordPress website as a widget.
 
 == Description ==
 
-This is an early version of the Easy Pinterest widget for WordPress, please let me know at http://thisismyurl.com if you have suggestion how to make it better. 
+This is an early version of the Easy Pinterest widget for WordPress, please let me know at http://thisismyurl.com if you have suggestion how to make it better.
 
 The plugin adds a 300px wide Widget to your website which fetches your Pinterest RSS feed and displays the images on your website. Currently, you can select the number of images to display, the account to fetch and the title of the Widget.
 
@@ -30,7 +30,7 @@ To install the plugin, please upload the folder to your plugins folder and activ
 2. Widget
 
 == Updates ==
-Updates to the plugin will be posted here, to http://thisismyurl.com
+Updates to the plugin will be posted here, to http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest-wordpress/
 
 == Frequently Asked Questions ==
 
@@ -41,15 +41,20 @@ On your Widgets page, simply drag and drop the widget to your sidebar!
 =General results=
 
 == Donations ==
-If you would like to donate to help support future development of this tool, please visit 
-Christopher Ross at http://thisismyurl.com/
+If you would like to donate to help support future development of this tool, please visit
+Christopher Ross at http://thisismyurl.com/downloads/wordpress-plugins/
 
 
 == Change Log ==
 
-* 1.0.0
+* 1.2.1
 
-- The official release, see more at [thisismyurl.com] (http://thisismyurl.com) 
+- Added code fix for links (thanks to openboxstudios)
+
+* 1.1.1
+
+- fixed hyperlink for credits
+- fixed documentation links
 
 * 1.1.0
 
@@ -58,7 +63,6 @@ Christopher Ross at http://thisismyurl.com/
 - added ability to block Pinterest from indexing pages
 - added ability to include thank you credit line under widget
 
-* 1.1.1
+* 1.0.0
 
-- fixed hyperlink for credits
-- fixed documentation links
+- The official release, see more at [thisismyurl.com] (http://thisismyurl.com)
