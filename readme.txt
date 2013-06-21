@@ -1,11 +1,11 @@
 === Plugin Name ===
 Contributors: christopherross
-Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest-wordpress/
+Plugin URI: http://thisismyurl.com/plugins/easy-pinterest-wordpress/
 Tags: pinboard, pinterest, widget
-Donate link:  http://thisismyurl.com/downloads/wordpress-plugins/
+Donate link:  http://thisismyurl.com/plugins/
 Requires at least: 3.0.0
-Tested up to: 3.3.1
-Stable tag: 1.2.0
+Tested up to: 3.5.1
+Stable tag: 1.2.1
 
 An easy way to add recent Pinterest posts to your WordPress website as a widget.
 
@@ -19,6 +19,8 @@ Under the Settings > Easy Pinterest page, you can also choose to block Pinterest
 
 At the moment, it fetches once per day.
 
+This plugin is maintained by Christopher Ross, http://thisismyurl.com or you can find him on Twitter at http://twitter.com/thisismyurl/
+
 == Installation ==
 
 To install the plugin, please upload the folder to your plugins folder and active the plugin.
@@ -30,7 +32,7 @@ To install the plugin, please upload the folder to your plugins folder and activ
 2. Widget
 
 == Updates ==
-Updates to the plugin will be posted here, to http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest-wordpress/
+Updates to the plugin will be posted here, to http://thisismyurl.com/plugins/easy-pinterest-wordpress/
 
 == Frequently Asked Questions ==
 
@@ -42,7 +44,7 @@ On your Widgets page, simply drag and drop the widget to your sidebar!
 
 == Donations ==
 If you would like to donate to help support future development of this tool, please visit
-Christopher Ross at http://thisismyurl.com/downloads/wordpress-plugins/
+Christopher Ross at http://thisismyurl.com/plugins/
 
 
 == Change Log ==
