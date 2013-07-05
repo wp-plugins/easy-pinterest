@@ -5,7 +5,7 @@ Plugin URI: http://thisismyurl.com/plugins/easy-pinterest-wordpress/
 Description: An easy to use WordPress function to add Easy Pinterest to any theme as a function or Widget.
 Author: Christopher Ross
 Tags: easy pinterest, thisismyurl, pin terest, pintrest, social media, photo sharing, block pinterest
-Author URI: http://thisismyurl.com
+Author URI: http://thisismyurl.com/
 Version: 1.2.1
 */
 
