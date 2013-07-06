@@ -1,31 +1,29 @@
 <?php
 /*
 Plugin Name: Easy Pinterest
-Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/easy-pinterest-wordpress/
+Plugin URI: http://thisismyurl.com/plugins/easy-pinterest-wordpress/
 Description: An easy to use WordPress function to add Easy Pinterest to any theme as a function or Widget.
 Author: Christopher Ross
 Tags: easy pinterest, thisismyurl, pin terest, pintrest, social media, photo sharing, block pinterest
-Author URI: http://thisismyurl.com
+Author URI: http://thisismyurl.com/
 Version: 1.2.1
 */
 
 
-/*  Copyright 2012 Christopher Ross  ( email : info@thisismyurl.com )
+/**
+ * Easy Pinterest file
+ *
+ * This file contains all the logic required for the plugin
+ *
+ * @link		http://wordpress.org/extend/plugins/easy-pinterest-wordpress/
+ *
+ * @package 		Easy Pinterest
+ * @copyright		Copyright (c) 2012, Chrsitopher Ross
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Easy Pinterest 1.0
+ */
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    ( at your option ) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 class thisismyurl_easy_pinterest_widget extends WP_Widget
 {
@@ -165,7 +163,7 @@ function thisismyurl_easy_pinterest_options( $options='' ) {
             <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal">
             </form>
         </div>
-        <a style='float:right; width: 40%;' href='http://thisismyurl.com/downloads/wordpress-plugins/'><img style='width: 100%; height: auto;' src='<?php echo WP_PLUGIN_URL .'/'.str_replace( basename( __FILE__ ),"",plugin_basename( __FILE__ ) );?>/images/plugin-logo.png' /></a>
+        <a style='float:right; width: 40%;' href='http://thisismyurl.com/plugins/'><img style='width: 100%; height: auto;' src='<?php echo WP_PLUGIN_URL .'/'.str_replace( basename( __FILE__ ),"",plugin_basename( __FILE__ ) );?>/images/plugin-logo.png' /></a>
     	<div style='clear:both'></div>
     </div>
 
