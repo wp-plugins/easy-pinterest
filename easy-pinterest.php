@@ -6,7 +6,7 @@ Description: An easy to use WordPress function to add Easy Pinterest to any them
 Author: Christopher Ross
 Tags: easy pinterest, thisismyurl, pin terest, pintrest, social media, photo sharing, block pinterest
 Author URI: http://thisismyurl.com/
-Version: 1.2.5
+Version: 1.2.6
 */
 
 
@@ -86,18 +86,21 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 			echo '<div class="content"><div class="textwidget">';
 			echo '<ul class="easy-pinterest">';
 			foreach ( $pinterest_feed as $item ) {
-				$pinterest_content = $item->get_content();
-				$pinterest_content = str_replace( '&gt;','>',$pinterest_content );
-				$pinterest_content = str_replace( '&lt;','<',$pinterest_content );
-				$pinterest_content = str_replace( '<a','<a target="_blank"',$pinterest_content );
-				$pinterest_content = str_replace( 'href="','href="http://www.pinterest.com', $pinterest_content );
 
-				$pinterest_content = strip_tags( $pinterest_content, "<a>,<img>" );
-				$pinterest_content_array = explode( '</a>', $pinterest_content );
-				$pinterest_content = $pinterest_content_array[0];
+				if ( ! empty( $item ) ) {
+					$pinterest_content = $item->get_content();
+					$pinterest_content = str_replace( '&gt;','>',$pinterest_content );
+					$pinterest_content = str_replace( '&lt;','<',$pinterest_content );
+					$pinterest_content = str_replace( '<a','<a target="_blank"',$pinterest_content );
+					$pinterest_content = str_replace( 'href="','href="http://www.pinterest.com', $pinterest_content );
 
-				?><ol><a href='<?php echo esc_url( $item->get_permalink() ); ?>'
-					title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'><?php echo $pinterest_content; ?></a></ol><?php
+					$pinterest_content = strip_tags( $pinterest_content, "<a>,<img>" );
+					$pinterest_content_array = explode( '</a>', $pinterest_content );
+					$pinterest_content = $pinterest_content_array[0];
+
+					?><ol><a href='<?php echo esc_url( $item->get_permalink() ); ?>'
+						title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'><?php echo $pinterest_content; ?></a></ol><?php
+				}
 			}
 
 			echo "</ul>";
@@ -181,7 +184,7 @@ function thisismyurl_easy_pinterest_options( $options='' ) {
 			<div class="handlediv" title="Click to toggle"><br /></div>
 			<h3 class="hndle"><span><?php _e( 'Easy Pinterest Settings','easy_pinterest' ) ?></span></h3>
 			<div class="inside">
-				<p><label><input name="easy_pinterest_block" type="checkbox" value="1" <?php if ( $options->easy_pinterest_block == '1' ) { echo "checked";}?> />&nbsp;<?php _e( 'Block Pinterest from this domain','easy_pinterest' ) ?></label></p>
+				<p><label><input name="easy_pinterest_block" type="checkbox" value="1" <?php if ( isset($options->easy_pinterest_block) && $options->easy_pinterest_block == '1' ) { echo "checked";}?> />&nbsp;<?php _e( 'Block Pinterest from this domain','easy_pinterest' ) ?></label></p>
 			</div>
 			</div>
 
@@ -203,9 +206,12 @@ function thisismyurl_easy_pinterest_block() {
 	// look to see if the block option is active and if it is, add a meta tag to the head of the HTML page
 
 	$options = get_option( 'thisismyurl_easy_pinterest' );
-	$options_block = $options->easy_pinterest_block;
-	if ( $options_block == '1' )
-		echo '<meta name="pinterest" content="nopin" />';
 
+	if ( isset($options) ) {
+
+
+	if ( isset( $options->easy_pinterest_block ) && $options->easy_pinterest_block == '1' )
+		echo '<meta name="pinterest" content="nopin" />';
+	}
 }
 add_action( 'wp_head', 'thisismyurl_easy_pinterest_block' );
