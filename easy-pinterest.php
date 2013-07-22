@@ -6,7 +6,7 @@ Description: An easy to use WordPress function to add Easy Pinterest to any them
 Author: Christopher Ross
 Tags: easy pinterest, thisismyurl, pin terest, pintrest, social media, photo sharing, block pinterest
 Author URI: http://thisismyurl.com/
-Version: 1.2.6
+Version: 1.2.7
 */
 
 
@@ -81,29 +81,34 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 			echo $before_widget;
 
 			echo '<h4 class="widgettitle pinterest-title"><a href="http://pinterest.com/' . $instance['pinterest_username'] . '"
-				target="_blank">' . $instance['title'].'</h4>';
+				target="_blank">' . $instance['title'].'</a></h4>';
 
 			echo '<div class="content"><div class="textwidget">';
 			echo '<ul class="easy-pinterest">';
-			foreach ( $pinterest_feed as $item ) {
 
-				if ( ! empty( $item ) ) {
-					$pinterest_content = $item->get_content();
-					$pinterest_content = str_replace( '&gt;','>',$pinterest_content );
-					$pinterest_content = str_replace( '&lt;','<',$pinterest_content );
-					$pinterest_content = str_replace( '<a','<a target="_blank"',$pinterest_content );
-					$pinterest_content = str_replace( 'href="','href="http://www.pinterest.com', $pinterest_content );
+			if ( ! is_wp_error( $pinterest_feed ) ) {
+				foreach ( $pinterest_feed as $item ) {
 
-					$pinterest_content = strip_tags( $pinterest_content, "<a>,<img>" );
-					$pinterest_content_array = explode( '</a>', $pinterest_content );
-					$pinterest_content = $pinterest_content_array[0];
+					if ( ! empty( $item ) ) {
+						$pinterest_content = $item->get_content();
+						$pinterest_content = str_replace( '&gt;','>',$pinterest_content );
+						$pinterest_content = str_replace( '&lt;','<',$pinterest_content );
+						$pinterest_content = str_replace( '<a','<a target="_blank"',$pinterest_content );
+						$pinterest_content = str_replace( 'href="','href="http://www.pinterest.com', $pinterest_content );
 
-					?><ol><a href='<?php echo esc_url( $item->get_permalink() ); ?>'
-						title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'><?php echo $pinterest_content; ?></a></ol><?php
+						$pinterest_content = strip_tags( $pinterest_content, "<a>,<img>" );
+						$pinterest_content_array = explode( '</a>', $pinterest_content );
+						$pinterest_content = $pinterest_content_array[0];
+
+						?><ol><a href='<?php echo esc_url( $item->get_permalink() ); ?>'
+							title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'><?php echo $pinterest_content; ?></a></ol><?php
+					}
 				}
-			}
 
-			echo "</ul>";
+				echo "</ul>";
+			} else {
+				?>Error loading Pinterest feed, likely an invalid character in the feed source.<?php
+			}
 
 			echo $after_widget;
 		}
