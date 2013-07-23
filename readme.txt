@@ -5,7 +5,7 @@ Tags: pinboard, pinterest, widget
 Donate link:  http://thisismyurl.com/plugins/
 Requires at least: 3.0.0
 Tested up to: 3.5.1
-Stable tag: 1.2.6
+Stable tag: 1.2.8
 
 An easy way to add recent Pinterest posts to your WordPress website as a widget.
 
