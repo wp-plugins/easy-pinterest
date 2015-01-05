@@ -6,7 +6,7 @@ Description: An easy to use WordPress function to add Easy Pinterest to any them
 Author: Christopher Ross
 Tags: easy pinterest, thisismyurl, pin terest, pintrest, social media, photo sharing, block pinterest
 Author URI: http://thisismyurl.com/
-Version: 1.2.8
+Version: 1.2.9
 */
 
 
@@ -90,6 +90,13 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 
 				echo '<ul class="easy-pinterest">';
 
+
+
+				$secure = '';
+				
+				if ( ! empty( $_SERVER['HTTPS'] ) )
+					$secure = 's';
+					 
 				foreach ( $pinterest_feed as $item ) {
 
 					if ( ! empty( $item ) ) {
@@ -97,7 +104,7 @@ class thisismyurl_easy_pinterest_widget extends WP_Widget
 						$pinterest_content = str_replace( '&gt;','>',$pinterest_content );
 						$pinterest_content = str_replace( '&lt;','<',$pinterest_content );
 						$pinterest_content = str_replace( '<a','<a target="_blank"',$pinterest_content );
-						$pinterest_content = str_replace( 'href="','href="http://www.pinterest.com', $pinterest_content );
+						$pinterest_content = str_replace( 'href="','href="http' . $secure . '://www.pinterest.com', $pinterest_content );
 
 						$pinterest_content = strip_tags( $pinterest_content, "<a>,<img>" );
 						$pinterest_content_array = explode( '</a>', $pinterest_content );
